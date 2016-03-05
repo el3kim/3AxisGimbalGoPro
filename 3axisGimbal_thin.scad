@@ -22,7 +22,6 @@ difference() {
         color([0.1,0.1,0.1,1]) sphere(DIA_GoPro);
         color([0.1,0.1,0.1,1]) cube([DIA_GoPro*2,DIA_GoPro*2,l_GoPro-3.3], center=true);
     }
-
     //ingrandisce GoPro del 102%
     scale([1.02,1.02,1.02]) rotate(gira) import("gp4seasson.stl", convexity=3);
     //taglia sfera sotto per permettere ingresso GoPro
@@ -30,10 +29,7 @@ difference() {
     //foro pulsante REC GoPro
     rotate([0,90,-90]) cylinder(h=DIA_GoPro, d1=0, d2=25);
     translate([r-distanza,0,0]) rotate([-90,0,180]) servoSG90();
-
 }
-
-
 //1° braccio
 difference() {
     intersection(){
@@ -45,8 +41,7 @@ difference() {
             translate([0,0,-h/2]) cube([s,s,h]);
             translate([0,0,0]) rotate([0,90,0]) cylinder(h=s,d=h);
             translate([0,0,0]) rotate([-90,90,0]) cylinder(h=s,d=h);
-        }
-        
+        }     
     }
     translate([r-distanza,0,0]) rotate([-90,0,180]) servoSG90();
     translate([0,r1-distanza,0]) rotate([-90,0,270])servoSG90();
